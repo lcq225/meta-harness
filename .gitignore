@@ -60,3 +60,10 @@ credentials.json
 *.pem
 *.key
 secrets/-e "\n# CoPaw 工作目录\nmemory/\nsessions/\ntemp/\ntool_result/\nbackup/" 
+
+# Sensitive files (CRITICAL!)
+*.pypirc
+_secret
+_token
+_credential
+_password
