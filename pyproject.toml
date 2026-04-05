@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meta-harness"
+version = "1.0.0"
+description = "Agent Output Quality Evaluation and Experience Tracking System"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Meta-Harness Team", email = "team@users.noreply.github.com"}
+]
+keywords = [
+    "agent",
+    "evaluation",
+    "quality",
+    "experience",
+    "tracking",
+    "harness",
+    "ai"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "sqlalchemy>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "black>=23.0",
+    "ruff>=0.1.0",
+]
+copaw = [
+    "memorycoreclaw>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/users/noreply/meta-harness"
+Repository = "https://github.com/users/noreply/meta-harness"
+Issues = "https://github.com/users/noreply/meta-harness/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+meta_harness = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
